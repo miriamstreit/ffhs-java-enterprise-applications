@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: customer
+  namespace: default
+data:
+  JDBC_URL: jdbc:postgresql://database.default.svc.cluster.local:5432/bazaar
+  JDBC_USER: bazaaradmin
+  JDBC_PASSWORD: iS3llBeer

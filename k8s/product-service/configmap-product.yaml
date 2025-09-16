@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: product
+  namespace: default
+data:
+  SPRING_DATASOURCE_URL: jdbc:postgresql://database.default.svc.cluster.local:5432/bazaar
+  SPRING_DATASOURCE_USERNAME: bazaaradmin
+  SPRING_DATASOURCE_PASSWORD: iS3llBeer
+  SPRING_JPA_HIBERNATE_DDL_AUTO: update
+  SPRING_JPA_DATABASE_PLATFORM: org.hibernate.dialect.PostgreSQLDialect

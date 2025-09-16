@@ -1,0 +1,38 @@
+micronaut:
+  server:
+    cors:
+      enabled: true
+      configurations:
+        web:
+          allowed-methods:
+            - POST
+            - PUT
+            - DELETE
+            - GET
+            - OPTIONS
+
+  application:
+    name: customerService
+
+netty:
+  default:
+    allocator:
+      max-order: 3
+
+datasources:
+  default:
+    url: ${JDBC_URL:`jdbc:postgresql://localhost:5432/bazaar`}
+    username: ${JDBC_USER:bazaaradmin}
+    password: ${JDBC_PASSWORD:iS3llBeer}
+    driver-class-name: org.postgresql.Driver
+    auto-commit: true
+    schema-generate: CREATE
+
+jpa:
+  default:
+    entity-scan:
+      packages: "ch.schuum.brewbazaar"
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update

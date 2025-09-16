@@ -1,0 +1,13 @@
+*.aux
+*.bcf
+*.log
+*.out
+*.xml
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+
+_minted-main
+
+main.pdf

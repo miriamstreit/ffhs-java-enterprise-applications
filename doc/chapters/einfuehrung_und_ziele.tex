@@ -1,0 +1,69 @@
+%! Author = nico
+%! Date = 20.05.23
+
+\section{Einführung und Ziele}
+\label{sec:einfuehrung_und_ziele}
+In folgendem Kapitel wird die Aufgabenstellung und die Ziele der Arbeit erläutert.
+Es wird auf die Motivation eingegangen und die Anforderungen werden definiert.
+
+\subsection{Aufgabenstellung}
+\label{subsec:aufgabenstellung}
+Im Rahmen der Modularbeit wird eine Web-Applikation spezifiziert und entwickelt.
+Diese Modularbeit widerspiegelt die verschiedenen Architekturstile und -konzepte,
+die während des Moduls behandelt werden.
+Die Lösung basiert auf Jakarta EE, wird  um die Konzepte von Spring Boot erweitert und
+mit in Micronaut erstelle REST Services ergänzt.
+Die verschiedenen Services oder Komponenten werden letztlich als
+eigenständige Microservices als Container in Docker und Kubernetes verteilt.
+
+Die Modularbeit wird auf eine Arbeit aus dem Modul PA5 aufgebaut. Im Rahmen dieser Arbeit
+wurde ein Inventarverwaltungstool für Brauereien entwickelt. Nun soll ein Webshop zwecks
+dem Verkauf dieser gebrauten Biere entwickelt werden. Die verschiedenen Komponenten der 
+Applikation werden als Microservices aufgebaut. Auf dem Webshop soll eine Produktübersicht 
+vorhanden sein. Die Produkte bieten eine ausführliche Beschreibung inklusive Zutaten und Bildern. 
+Sie können in den Warenkorb gelegt und anschliessend bestellt werden. Die Verwaltung der 
+verschiedenen Objekte soll sich auf ein Minimum beschränken.
+
+\subsection{Funktionale Anforderungen}
+\label{subsec:funktionaleanforderungen}
+Es soll ein einfacher Webshop entwickelt werden, der die folgenden Funktionen bietet:
+
+\begin{itemize}
+    \item \textbf{Produktübersicht:} Auf dem Webshop soll eine Produktübersicht vorhanden sein.
+    \item \textbf{Produktdetails:} Die Produkte bieten eine ausführliche Beschreibung inklusive Zutaten, Bildern, Preis und Verfügbarkeit.
+    \item \textbf{Warenkorb:} Die Produkte können in den Warenkorb gelegt werden.
+    \item \textbf{Bestellung:} Die Produkte können bestellt werden.
+\end{itemize}
+
+\subsection{Qualitätsziele an die Architektur}
+\label{subsec:qualitaetsziele}
+Die folgenden Qualitätsziele sollen bei der Entwicklung der Architektur berücksichtigt werden:
+
+\begin{itemize}
+    \item \textbf{Performance:} Die Performance der Anwendung soll so gut wie möglich sein.
+    Es soll eine möglichst hohe Anzahl an Anfragen pro Sekunde verarbeitet werden können.
+    \item \textbf{Skalierbarkeit:} Die Anwendung soll skalierbar sein. Es soll möglich sein,
+    mehrere Instanzen der Anwendung parallel zu betreiben.
+    \item \textbf{Erweiterbarkeit:} Die Anwendung soll möglichst einfach erweiterbar sein. 
+    \item \textbf{Wartbarkeit:} Die Anwendung soll möglichst einfach wartbar sein.
+    Fehler sollen leicht auffindbar und behebbar sein.
+    \item \textbf{Testbarkeit:} Die Anwendung soll möglichst einfach testbar sein.
+\end{itemize}
+
+\subsection{Stakeholder}
+\label{subsec:stakeholder}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|l|l|}
+        \hline
+        \textbf{Rolle}              & \textbf{Kontakt}  & \textbf{Erwartungshaltung} \\ \hline
+
+        Entwicklerin                & Miriam Streit     & \makecell{Umsetzung der Applikation \\ gemäss Aufgabenstellung} \\ \hline
+        Entwickler / Product Owner  & Nico Berchtold    & \makecell{Umsetzung der Applikation \\ gemäss Aufgabenstellung} \\ \hline
+        Dozent                      & Daniel Senften    & \makecell{Umsetzung der Applikation \\ gemäss Aufgabenstellung} \\ \hline
+        Benutzer                    & -                 & \makecell{Einfache Bedienung \\ der Applikation} \\ \hline
+    \end{tabular}
+    \caption{Stakeholder}
+    \label{tab:stakeholder}
+\end{table}

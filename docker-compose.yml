@@ -1,0 +1,76 @@
+version: "2"
+
+services:
+  order-service:
+    build:
+      context: ./order-service
+    container_name: order-service
+    depends_on:
+      - bazaar-db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://bazaar-db:5432/bazaar
+      - SPRING_DATASOURCE_USERNAME=bazaaradmin
+      - SPRING_DATASOURCE_PASSWORD=iS3llBeer
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+      - SPRING_JPA_DATABASE_PLATFORM=org.hibernate.dialect.PostgreSQLDialect
+    ports:
+      - "8083:8080"
+    expose:
+      - "8080"
+
+  product-service:
+    build:
+      context: ./product-service-boot
+    container_name: product-service
+    depends_on:
+      - bazaar-db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://bazaar-db:5432/bazaar
+      - SPRING_DATASOURCE_USERNAME=bazaaradmin
+      - SPRING_DATASOURCE_PASSWORD=iS3llBeer
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+      - SPRING_JPA_DATABASE_PLATFORM=org.hibernate.dialect.PostgreSQLDialect
+    ports:
+      - "8081:8080"
+    expose:
+      - "8081"
+
+  customer-service:
+    build:
+      context: ./customer-service
+    container_name: customer-service
+    depends_on:
+      - bazaar-db
+    environment:
+      - JDBC_URL=jdbc:postgresql://bazaar-db:5432/bazaar
+      - JDBC_USER=bazaaradmin
+      - JDBC_PASSWORD=iS3llBeer
+    ports:
+      - "8082:8080"
+    expose:
+      - "8082"
+
+  bazaar-db:
+    image: "postgres:15"
+    container_name: bazaar-db
+    environment:
+      - POSTGRES_USER=bazaaradmin
+      - POSTGRES_PASSWORD=iS3llBeer
+      - POSTGRES_DB=bazaar
+    ports:
+      - "5432:5432"
+    expose:
+      - "5432"
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: frontend
+    depends_on:
+      - order-service
+      - product-service
+      - customer-service
+    ports:
+      - "80:80"
+    expose:
+      - "80"

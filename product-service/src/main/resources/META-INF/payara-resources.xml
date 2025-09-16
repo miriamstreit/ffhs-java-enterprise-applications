@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE resources PUBLIC "-//Payara.fish//DTD Payara Server 4 Resource Definitions//EN" "https://raw.githubusercontent.com/payara/Payara-Server-Documentation/master/schemas/payara-resources_1_6.dtd">
+<resources>
+  <jdbc-resource enabled="true"
+    pool-name="MySQLPool"
+    jndi-name="java:global/bazaar"/>
+  <jdbc-connection-pool name="bazaar"
+    res-type="javax.sql.DataSource"
+    datasource-classname="com.mysql.cj.jdbc.PostgresDataSource">
+    <property name="URL" value="jdbc:postgresql://bazaar-db:5432/bazaar"/>
+    <property name="User" value="bazaaradmin"/>
+    <property name="Password" value="iS3llBeer"/>
+  </jdbc-connection-pool>
+</resources>

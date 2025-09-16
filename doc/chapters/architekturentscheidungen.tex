@@ -1,0 +1,33 @@
+%! Author = Miriam Streit
+%! Date = 17.06.23
+
+\section{Lösungsstrategie}
+\label{sec:loesungsstrategie}
+
+\subsection{Domain Driven Design}
+Durch die vorliegende Aufgabenstellung ist die Verwendung von mindestens drei Microservices bereits vorgegeben. Der Webshop musste also sinnvoll in verschiedene
+Domänen unterteilt werden, die eine saubere Aufteilung erlauben. Die Domänen wurden wie folgt definiert:
+\begin{itemize}
+    \item Customer: umgesetzt mit Micronaut
+    \item Order: umgesetzt mit Spring Boot
+    \item Product: umgesetzt mit Jakarta EE
+\end{itemize}
+    
+Es gibt keinen besonderen Grund, weshalb welche Technologie für welchen Service verwendet wurde, da sie ja alle verwendet werden mussten.
+
+\subsection{Aufteilung in Backend und Frontend}
+Das Backend wurde serviceorientiert gebaut. Das Frontend hingegen folgt einer monolithischen Architektur. Das Frontend ist in VueJS geschrieben und greift auf die verschiedenen Backends zu.
+
+Ursprünglich war die Idee, dass pro Microservice ein Frontend existiert. So wäre es möglich gewesen, dass die Microservices unabhängig voneinander entwickelt werden können. Problem hier war, dass nicht jeder Service, wie zum Beispiel Jakarta EE, ein Frontend unterstützt. Nach langem evaluieren wurde sich dann dazu entschieden, dass Frontend auf einen designierten Service zu beschränken. Vorteil hierbei ist nun, dass das Frontend auf jeden Microservice zugreifen kann.
+
+Aktuell befindet sich die Business Logik im Frontend. Dies ist nicht optimal, da die Business Logik eigentlich im Backend liegen sollte. Da die Backends allerdings
+voneinander unabhängige Services sind, würde die Business Logik eine enge Koppelung zwischen den Services erzeugen, die für diesen Anwendungsfall vermieden werden wollte.
+In einer realen Anwendung würde für serviceübergreifende Business Logik ein Message Bus o.ä. eingesetzt.
+
+\subsection{Gleiche Datenbank für alle Services}
+Die Microservice-Architektur gibt vor, dass jeder Service unabhängig von anderen Services sein muss und somit auch seine eigene Datenbank bewirtschaftet. Für diesen kleinen
+Anwendungsfall wurde allerdings entschieden, dass alle Services auf die gleiche Datenbank zugreifen. Dies wurde entschieden, da die verschiedenen Datenobjekte stark zusammenhängen
+und es wenig Sinn machen würde, den Aufwand zu betreiben, sie zu trennen.
+
+\subsection{Deployment}
+Durch die Aufgabenstellung wurde vorgegeben, dass die Anwendung in Docker Containern laufen und auf Kubernetes deployed werden soll. Dies wurde entsprechend umgesetzt.

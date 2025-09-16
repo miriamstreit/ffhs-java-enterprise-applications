@@ -1,0 +1,16 @@
+%! Author = Miriam Streit
+%! Date = 01.07.23
+
+\section{Installation}
+\label{sec:installation}
+
+Sämtliche Dokumentation zur Installation befindet sich in der Datei README.md auf der obersten Ebene des Repository. Gemäss dieser Anleitung kann die Applikation entweder auf einem
+lokalen Minikube Kubernetes Cluster oder lokal mit Docker-Compose betrieben werden. 
+
+Wir hatten immer wieder sehr viel Mühe, die JakartaEE-Applikation (den Product-Service) überall zum Laufen zu bringen. Bei Miriam (MacOS ohne M1) funktionierte alles reibungslos,
+bei Nico (MacOS mit M1) funktionierte der Product-Service nur lokal im IDE. Im Container-Betrieb funktionierte der Service bei Nico überhaupt nicht. Da die Produkte zentral für die gesamte
+Applikation sind, wurde der Product-Service zusätzlich mit Spring Boot umgesetzt (product-service-boot). Dieser Service funktioniert auf allen Plattformen und kann als Alternative
+verwendet werden, damit die Funktionalität trotzdem getestet werden kann. Genaueres ist ebenfalls in der Installationsanleitung zu finden.
+
+Die erfolgreich deployte Applikation (unabhängig davon, ob mit Docker-Compose oder Kubernetes) sollte dann intuitiv zu bedienen sein. Sie bietet eine Produktübersicht, einen Warenkorb
+und ein Bestellformular.

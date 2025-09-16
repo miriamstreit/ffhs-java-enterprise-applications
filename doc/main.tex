@@ -1,0 +1,34 @@
+\documentclass[a4paper,11pt]{scrreprt}
+\RequirePackage{FFHS}
+
+\dokumentTyp{Semesterarbeit}
+\studiengang{Bachelor Informatik, Java Enterprise Applications}
+
+\author{Nico Berchtold, Miriam Streit}
+\title{BrewBazaar} %
+\subtitle{Modularbeit} % optional
+\titelbild[width=10cm]{images/title-image.jpeg}
+
+\wohnort{Bern}
+
+% \referent oder \referentin
+\referent{Daniel Senften\\Bachelor of Science (BSc)\\Java Enterprise Applications}
+\eingereichtBei{Daniel Senften\\Bachelor of Science (BSc)\\Dozent}
+
+\addbibresource{literature.bib} % Hinzufügen der Referenzen
+
+\graphicspath{ {images/} }
+
+\begin{document}
+    % Struktur gem. Arc42
+    \input{chapters/einfuehrung_und_ziele}
+    \input{chapters/installation}
+    \input{chapters/randbedingungen}
+    \input{chapters/kontextabgrenzung}
+    \input{chapters/bausteinsicht}
+    \input{chapters/laufzeitsicht}
+    \input{chapters/verteilungssicht}
+    \input{chapters/architekturentscheidungen}
+    \input{chapters/qualitaetsanforderungen}
+
+\end{document}

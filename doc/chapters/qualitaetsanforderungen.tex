@@ -1,0 +1,46 @@
+%! Author = Miriam Streit
+%! Date = 17.06.23
+
+\section{Qualitätsanforderungen}
+\label{sec:qualitaetsanforderungen}
+
+In diesem Kapitel werden die Qualitätsanforderungen an das System definiert. Diese Anforderungen dienen dazu, die gewünschte Qualität in den verschiedenen Aspekten des Systems sicherzustellen und die Leistungsfähigkeit, Zuverlässigkeit und Benutzerfreundlichkeit zu gewährleisten.
+Die Qualitätsanforderungen werden anhand von Szenarien beschrieben, welche die Anforderungen an das System aus Sicht der Stakeholder darstellen.
+
+\subsection{Qualitätsszenarien}
+\label{subsec:qualitaetsszenarien}
+Folglich werden die Qualitätsanforderungen anhand von Szenarien beschrieben, welche die Anforderungen an das System aus Sicht der Stakeholder darstellen. Alle Qualitätsanforderungen können mit zwei Szenario getestet werden, da die Applikation nur aus einem einzigen Use Case besteht.
+
+\subsubsection{Szenario 1: Bestellung aufgeben}
+\label{subsec:szenario1}
+
+\textbf{Auslöser}: Ein Kunde möchte eine Bestellung im Online-Bier-Shop aufgeben, um seine gewünschten Biersorten zu erhalten.
+
+Beschreibung: Der Kunde durchsucht die Website des Online-Bier-Shops und wählt die gewünschten Biersorten aus. Er fügt die ausgewählten Biere dem Warenkorb hinzu und prüft die Inhalte des Warenkorbs. Anschließend geht der Kunde zur Kasse und gibt seine Lieferadresse ein. Das System validiert die eingegebenen Daten und erstellt eine Bestellung. Eine Bestätigungsseite wird angezeigt, auf der die Bestelldetails einschließlich der Bestellnummer.
+
+\textbf{Qualitätsanforderungen:}
+
+\begin{itemize}
+    \item Verfügbarkeit: Das System muss rund um die Uhr verfügbar sein, damit Kunden Bestellungen zu jeder beliebigen Zeit aufgeben können.
+    \item Skalierbarkeit: Das System muss in der Lage sein, eine große Anzahl von Bestellungen zu verarbeiten, um die Anforderungen während der Stosszeiten zu erfüllen.
+    \item Leistung: Das System sollte schnell reagieren und Bestellungen effizient verarbeiten, um eine reibungslose Benutzererfahrung zu gewährleisten.
+    \item Genauigkeit: Die eingegebenen Liefer- und Zahlungsinformationen müssen korrekt erfasst und verarbeitet werden, um Lieferfehler und Zahlungsprobleme zu vermeiden.
+    \item Bestandsverwaltung: Das System muss den aktuellen Lagerbestand verfolgen und sicherstellen, dass nur verfügbare Biere bestellt werden können.
+    \item Fehlerbehandlung: Das System sollte angemessene Fehlermeldungen anzeigen, falls während des Bestellprozesses Probleme auftreten, um dem Kunden eine klare Rückmeldung zu geben und Unterstützung anzubieten.
+\end{itemize}
+
+\subsubsection{Szenario 2: Code-Änderungen bereitstellen}
+\label{subsec:szenario2}
+
+\textbf{Auslöser}: Ein Entwickler möchte eine neue Version des Online-Bier-Shops bereitstellen, um neue Funktionen und Fehlerbehebungen zu veröffentlichen.
+
+Beschreibung: Der Entwickler erstellt eine neue Version eines Services und möchte diese deployen. Die neue Version wird getestet, um sicherzustellen, dass sie ordnungsgemäss funktioniert. Wenn der Service erfolgreich getestet wurde, wird er mit dem aktuellen Service ausgetauscht.
+
+\textbf{Qualitätsanforderungen:}
+
+\begin{itemize}
+    \item Erweiterbarkeit: Das System muss einfach erweitert werden können, um neue Funktionen hinzuzufügen.
+    \item Unabhängigkeit zwischen Services: Die Services müssen unabhängig voneinander sein, um Änderungen an einem Service zu ermöglichen, ohne dass andere Services davon betroffen sind.
+    \item Clean Code: Der Code muss gut strukturiert und dokumentiert sein, um die Wartbarkeit zu erleichtern.
+    \item Testbarkeit: Das System muss einfach getestet werden können, um sicherzustellen, dass es ordnungsgemäss funktioniert.
+\end{itemize}
